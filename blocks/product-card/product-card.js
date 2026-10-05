@@ -1,11 +1,18 @@
-export default function decorate(block) {
+import { createOptimizedPicture } from '../../scripts/aem.js';
+
+export default async function decorate(block) {
+  const response = await fetch('/products.json');
+  const json = await response.json();
   const ul = document.createElement('ul');
-  [...block.children].forEach((row) => {
+  json.data.forEach((product) => {
     const li = document.createElement('li');
-    const picture = row.querySelector('picture');
-    const paragraphs = row.querySelectorAll('p');
-    const name = paragraphs[0];
-    const price = paragraphs[1];
+    const picture = createOptimizedPicture(product.Image, product.Name);
+    const name = document.createElement('p');
+    name.className = 'product-card-name';
+    name.textContent = product.Name;
+    const price = document.createElement('p');
+    price.className = 'product-card-price';
+    price.textContent = `R$ ${product.Price}`;
     const button = document.createElement('button');
     button.textContent = 'Comprar';
     button.className = 'button primary';
