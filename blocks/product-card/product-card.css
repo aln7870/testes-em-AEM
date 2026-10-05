@@ -21,3 +21,12 @@
 .product-card button {
     width: 100%;
 }
+
+.product-card .product-card-name {
+    font-weight: bold;
+}
+
+.product-card .product-card-price {
+    font-weight: bold;
+    font-size: 1.2em;
+}
