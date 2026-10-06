@@ -1,0 +1,13 @@
+.product-detail img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+}
+
+@media (width >= 900px) {
+    .product-detail {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+    }
+}
