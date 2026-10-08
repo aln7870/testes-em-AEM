@@ -11,3 +11,16 @@
         gap: 48px;
     }
 }
+
+.product-detail .product-detail-name {
+    margin-top: 0;
+}
+
+.product-detail .product-detail-price {
+    font-weight: bold;
+    font-size: 1.6em;
+}
+
+.product-detail .product-detail-button {
+    min-width: 200px;
+}
