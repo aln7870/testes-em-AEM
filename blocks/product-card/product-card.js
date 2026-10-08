@@ -16,7 +16,10 @@ export default async function decorate(block) {
     const button = document.createElement('button');
     button.textContent = 'Comprar';
     button.className = 'button primary';
-    li.append(picture, name, price, button);
+    const link = document.createElement('a');
+    link.href = `/produto?id=${product.Id}`;
+    link.append(picture, name);
+    li.append(link, price, button);
     ul.append(li);
   });
   block.replaceChildren(ul);

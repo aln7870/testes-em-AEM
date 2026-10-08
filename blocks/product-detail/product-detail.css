@@ -1,0 +1,26 @@
+.product-detail img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+}
+
+@media (width >= 900px) {
+    .product-detail {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+    }
+}
+
+.product-detail .product-detail-name {
+    margin-top: 0;
+}
+
+.product-detail .product-detail-price {
+    font-weight: bold;
+    font-size: 1.6em;
+}
+
+.product-detail button {
+    min-width: 200px;
+}
