@@ -1,34 +1,39 @@
-# Your Project's Title...
-Your project's description...
+# Geek Store
+Projeto de uma loja de camisetas para aprimorar meu conhecimento em AEM Edge Delivery Services.
 
-## Environments
+## Ambientes
 - Preview: https://main--testes-em-AEM--aln7870.aem.page/
 - Live: https://main--testes-em-AEM--aln7870.aem.live/
 
-## Documentation
+## Funcionalidades
+- Catálogo na home lendo os produtos de uma planilha no DA (`/products.json`)
+- Página de detalhes do produto buscando pelo Id na URL: `/produto?id=...`
+- Mensagem "Produto não encontrado." quando o Id não existe
+- Layout responsivo: 2 colunas no desktop, empilhado no celular
 
-Before using the aem-boilerplate, we recommand you to go through the documentation on https://www.aem.live/docs/ and more specifically:
-1. [Developer Tutorial](https://www.aem.live/developer/tutorial)
-2. [The Anatomy of a Project](https://www.aem.live/developer/anatomy-of-a-project)
-3. [Web Performance](https://www.aem.live/developer/keeping-it-100)
-4. [Markup, Sections, Blocks, and Auto Blocking](https://www.aem.live/developer/markup-sections-blocks)
+## Blocos criados
+- `product-card`: busca os produtos na planilha e monta os cards da home, com link para a página de detalhes
+- `product-detail`: lê o Id da URL, encontra o produto e mostra foto, nome, preço, descrição e botão Comprar
 
-## Installation
+## Instalação
 
 ```sh
 npm i
 ```
 
-## Linting
+## Lint
 
 ```sh
 npm run lint
 ```
 
-## Local development
+## Desenvolvimento local
 
-1. Create a new repository based on the `aem-boilerplate` template
-1. Add the [AEM Code Sync GitHub App](https://github.com/apps/aem-code-sync) to the repository
-1. Install the [AEM CLI](https://github.com/adobe/helix-cli): `npm install -g @adobe/aem-cli`
-1. Start AEM Proxy: `aem up` (opens your browser at `http://localhost:3000`)
-1. Open the `testes-em-AEM` directory in your favorite IDE and start coding :)
+1. Instale o [AEM CLI](https://github.com/adobe/helix-cli): `npm install -g @adobe/aem-cli`
+2. Rode `aem up` (abre o navegador em `http://localhost:3000`)
+3. Abra a pasta `testes-em-AEM` no seu editor e comece a programar
+
+## Próximos passos
+- Metadata (título e descrição) por produto
+- Lista de produtos por categoria
+- Carrinho com contador no header
