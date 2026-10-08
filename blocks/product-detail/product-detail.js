@@ -6,6 +6,12 @@ export default async function decorate(block) {
   const params = new URLSearchParams(window.location.search);
   const id = params.get('id');
   const product = json.data.find((p) => p.Id === id);
+  if (!product) {
+    const message = document.createElement('p');
+    message.textContent = 'Produto não encontrado.';
+    block.replaceChildren(message);
+    return;
+  }
   const picture = createOptimizedPicture(product.Image, product.Name);
   const name = document.createElement('h1');
   name.className = 'product-detail-name';
